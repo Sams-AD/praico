@@ -1,3 +1,8 @@
 User-agent: *
+Disallow: /admin/
+Disallow: /carrinho/
+Disallow: /checkout/
+Disallow: /minha-conta/
 Allow: /
+Crawl-delay: 1
 Sitemap: https://www.praico-comercial.com/sitemap.xml
