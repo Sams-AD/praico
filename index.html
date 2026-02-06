@@ -164,9 +164,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    
-   
-   
 </head>
 
 <!-- Google tag (gtag.js) CORRIGIDO -->
@@ -278,33 +275,56 @@
                     <p>Seleção de equipamentos e soluções com qualidade superior e conformes com normas internacionais de segurança</p>
                 </div>
                 
-                <!-- Barra de Pesquisa, Visualização e Exportação -->
-                <div class="products-search-container">
-                    <div class="view-toggle">
-                        <button class="view-btn active" id="viewGridBtn">
-                            <i class="fas fa-th-large"></i> Grid
+                <!-- Barra de Ferramentas com Filtros -->
+                <div class="products-toolbar">
+                    <div class="filters-container">
+                        <div class="filter-group">
+                            <label for="categoryFilter">Categoria</label>
+                            <select id="categoryFilter" class="filter-select">
+                                <option value="">Todas as Categorias</option>
+                                <option value="EPI">EPIs</option>
+                                <option value="Proteção">Proteção</option>
+                                <option value="Laboratório">Laboratório</option>
+                                <option value="Higiene">Higiene Industrial</option>
+                                <option value="Equipamentos">Equipamentos</option>
+                                <option value="Consumíveis">Consumíveis</option>
+                            </select>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="priceFilter">Preço (Kz)</label>
+                            <div class="price-range-inputs">
+                                <input type="number" id="priceMin" placeholder="Mín" min="0">
+                                <span>a</span>
+                                <input type="number" id="priceMax" placeholder="Máx" min="0">
+                            </div>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <label for="sortFilter">Ordenar por</label>
+                            <select id="sortFilter" class="filter-select">
+                                <option value="name-asc">Nome (A-Z)</option>
+                                <option value="name-desc">Nome (Z-A)</option>
+                                <option value="price-asc">Preço (Crescente)</option>
+                                <option value="price-desc">Preço (Decrescente)</option>
+                            </select>
+                        </div>
+                        
+                        <button class="btn" id="clearFilters" style="align-self: flex-end; height: 42px;">
+                            <i class="fas fa-times"></i> Limpar
                         </button>
-                        <button class="view-btn" id="viewTableBtn">
-                            <i class="fas fa-list"></i> Lista
-                        </button>
-                    </div>
-                    
-                    <div class="export-buttons">
-                        <button class="export-btn" id="exportCSV">
-                            <i class="fas fa-file-csv"></i> Exportar CSV
-                        </button>
-                        <button class="export-btn" id="printTable">
-                            <i class="fas fa-print"></i> Imprimir
-                        </button>
-                    </div>
-                    
-                    <div class="search-box">
-                        <input type="text" id="productSearch" class="search-input" placeholder="🔍 Pesquisar produtos (ex: máscara, capacete, reagente...)" aria-label="Pesquisar produtos">
-                        <i class="fas fa-search search-icon"></i>
                     </div>
                     
                     <div class="products-counter">
-                        <span id="productCount">23</span> produtos disponíveis
+                        <span id="productCount">47</span> produtos disponíveis
+                    </div>
+                </div>
+                
+                <!-- Barra de Pesquisa -->
+                <div class="products-search-container">
+                    <div class="search-box">
+                        <input type="text" id="productSearch" class="search-input" placeholder="🔍 Pesquisar produtos (ex: máscara, capacete, reagente...)" aria-label="Pesquisar produtos">
+                        <i class="fas fa-search search-icon"></i>
                     </div>
                 </div>
                 
@@ -489,6 +509,6 @@
         </div>
     </footer>
     <!-- JavaScript -->
-   <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
